@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
 
 </head>
-<body class="h-full font-semibold" style="font-family:quicksand">
+<body class="h-full font-bold" style="font-family:quicksand">
 
 <div class="min-h-full">
     <nav class="bg-blue-800">
