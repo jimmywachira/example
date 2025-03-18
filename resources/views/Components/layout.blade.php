@@ -13,7 +13,7 @@
 </head>
 <body class="h-full font-semibold" style="font-family:quicksand">
 
-<div class="min-h-full capitalize">
+<div class="min-h-full">
     <nav class="bg-blue-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -23,13 +23,13 @@
                 alt="Your Company">
             </div>
             <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-blue-900 text-white", Default: " hover:bg-blue-700 hover:text-white" -->
-                <a href="/" class="{{ request()->is('/') ? "bg-blue-900 text-white " : " text-black hover:bg-blue-700 hover:text-white" }} rounded-md px-3 py-2" >home</a>
+              <div class="ml-10 flex capitalize  items-baseline space-x-4">
+               
+                <x-nav-link href="/" :active="request()->is('/')">home</x-nav-link>
 
-                <a href="/about" class="{{ request()->is('about') ? "bg-blue-900 text-white " : " text-black hover:bg-blue-700 hover:text-white" }} rounded-md px-3 py-2">about</a>
+                <x-nav-link href="/jobs" :active="request()->is('/jobs')">jobs</x-nav-link>
 
-                <a href="/contact" class="{{ request()->is('contact') ? "bg-blue-900 text-white " : " text-black hover:bg-blue-300 hover:text-white" }} rounded-md px-3 py-2">contact</a>
+                <x-nav-link href="/contact" :active="request()->is('/contact')">contact</x-nav-link>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
           <!-- Current: "bg-blue-900 text-white", Default: " hover:bg-blue-700 hover:text-white" -->
           <a href="/" class="block rounded-md bg-blue-900 px-3 py-2 text-base  text-white" aria-current="page">home</a>
-          <a href="/about" class="block rounded-md px-3 py-2 text-base   hover:bg-blue-700 hover:text-white">about</a>
+          <a href="/jobs" class="block rounded-md px-3 py-2 text-base   hover:bg-blue-700 hover:text-white">jobs</a>
           <a href="/contact" class="block rounded-md px-3 py-2 text-base   hover:bg-blue-700 hover:text-white">contact</a>
         </div>
         <div class="border-t border-gray-700 pt-4 pb-3">
