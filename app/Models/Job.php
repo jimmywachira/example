@@ -22,6 +22,10 @@ class Job
                 'id' => 3,
                 'title' => 'Marketing Intern',
                 'salary' => 50000
+            ],[
+                'id' => 4,
+                'title' => 'Sales Manager',
+                'salary' => 200000
             ]
         ];
     }
