@@ -2,11 +2,17 @@
 
 namespace App\Models;
 use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Job
+class Job extends Model
 {
-    public static function all(): array
-    {
+    use HasFactory;
+    protected $table = 'job_listings';
+    protected $fillable = ['title', 'salary'];
+
+}
+    /*
         return [
             [
                 'id' => 1,
@@ -40,3 +46,4 @@ class Job
         return $job;
     }
 }
+*/

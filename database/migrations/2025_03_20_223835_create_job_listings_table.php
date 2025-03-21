@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Employer;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -13,9 +14,13 @@ return new class extends Migration
     {
         Schema::create('job_listings', function (Blueprint $table) {
             $table->id();
+            #$table->unsignedBigInteger(Employer::class);
+            $table->foreignIdFor(Employer::class);
             $table->string('title');
             $table->integer('salary');
             $table->timestamps();
+
+            #$table->foreign('employer_id')->references('id')->on('employers');
         });
     }
 
