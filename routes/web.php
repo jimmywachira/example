@@ -22,7 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function ()  {
-    return view('jobs',[ 'jobs' => job::all()
+    $jobs = Job::with('employer')->get();
+
+    return view('jobs',[ 'jobs' => $jobs
         ]);
 });
 
@@ -33,6 +35,6 @@ Route::get('/jobs/{id}', function ($id)  {
 ]);
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/about', function () {
+    return view('about');
 });

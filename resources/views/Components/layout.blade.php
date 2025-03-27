@@ -29,7 +29,7 @@
 
                 <x-nav-link href="/jobs" :active="request()->is('/jobs')">jobs</x-nav-link>
 
-                <x-nav-link href="/contact" :active="request()->is('/contact')">contact</x-nav-link>
+                <x-nav-link href="/about" :active="request()->is('/about')">about</x-nav-link>
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@
           <!-- Current: "bg-blue-900 text-white", Default: " hover:bg-blue-700 hover:text-white" -->
           <a href="/" class="block rounded-md bg-blue-900 px-3 py-2 text-base  text-white" aria-current="page">home</a>
           <a href="/jobs" class="block rounded-md px-3 py-2 text-base   hover:bg-blue-700 hover:text-white">jobs</a>
-          <a href="/contact" class="block rounded-md px-3 py-2 text-base   hover:bg-blue-700 hover:text-white">contact</a>
+          <a href="/about" class="block rounded-md px-3 py-2 text-base   hover:bg-blue-700 hover:text-white">about</a>
         </div>
         <div class="border-t border-gray-700 pt-4 pb-3">
           <div class="flex items-center px-5">
@@ -107,7 +107,7 @@
   
     <header class="bg-white shadow-sm">
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-black-900"> {{ $heading }} </h1>
+        <h1 class="text-3xl font-bold text-center tracking-tight text-black-900"> {{ $heading }} </h1>
       </div>
     </header>
     <main>

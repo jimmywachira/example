@@ -1,6 +1,8 @@
 <x-layout>
-    <x-slot:heading>Home page</x-slot:heading>
+    <x-slot:heading class="text-center">Home page</x-slot:heading>
 
-    <p> This is the home page. </p>
+    <div class="w-full h-full object-cover blur-sm">
+        <img class="full" src="https://flowbite.com/docs/images/blog/image-3.jpg" alt="" >
+    </div>
 
 </x-layout>

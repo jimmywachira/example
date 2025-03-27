@@ -1,16 +1,21 @@
 <x-layout>
     <x-slot:heading>jobs page</x-slot:heading>
-    <h1>jobs page</h1>
 
-    <div class="mt-4 border shadow p-2">
-      <ul>
+    <main class="container-fluid rounded  shadow mx-auto">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
         @foreach ($jobs as $job )
-            <li class="p-2"> 
-              <a href="/jobs/{{ $job['id'] }}" class=" hover:text-blue-500">
-                {{ $job['title'] }} : pays {{ $job['salary'] }}$ per yr 
-              </a>
-            </li>
+          <a href="/jobs/{{ $job['id'] }}" class="border shadow p-4 hover:text-blue-500">
+            <div class="object-cover blur-sm">
+              <img class="full" src="https://flowbite.com/docs/images/blog/image-3.jpg" alt="">
+            </div>
+            <div class="font-bold m-1 text-xl">{{ $job['title'] }}</div>
+            <div class="text-lg m-1">Pays {{ $job['salary'] }}$ per yr</div>
+            <div class="font-bold m-1 text-blue-500">{{ $job->employer->name }}</div>
+          </a>
         @endforeach
-      </ul>
-  </div>
-  </x-layout>
+      </div>
+
+    </main>
+</x-layout> 
