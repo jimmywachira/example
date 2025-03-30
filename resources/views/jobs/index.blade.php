@@ -7,7 +7,8 @@
 
         @foreach ($jobs as $job )
           <a href="/jobs/{{ $job['id'] }}" class="border shadow p-4 hover:text-blue-500">
-            <div class="object-cover blur-sm">
+            
+            <div class="object-cover blur-sm opacity-70">
               <img class="full" src="https://flowbite.com/docs/images/blog/image-3.jpg" alt="">
             </div>
             <div class="font-bold m-1 text-xl">{{ $job['title'] }}</div>
@@ -16,6 +17,5 @@
           </a>
         @endforeach
       </div>
-
-    </main>
+    </main> 
 </x-layout> 

@@ -13,6 +13,7 @@
 </head>
 <body class="h-full font-bold" style="font-family:quicksand">
 
+
 <div class="min-h-full">
     <nav class="bg-blue-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -106,8 +107,13 @@
     </nav>
   
     <header class="bg-white shadow-sm">
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:flex  sm:justify-between">
         <h1 class="text-3xl font-bold text-center tracking-tight text-black-900"> {{ $heading }} </h1>
+
+        <div class="text-lg m-1 p-2">
+<x-button href="/jobs/create">create job</x-button>
+        </div>
+
       </div>
     </header>
     <main>

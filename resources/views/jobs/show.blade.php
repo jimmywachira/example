@@ -3,6 +3,7 @@
 
     <div class="card mt-4 border shadow p-2">
         <div class="pt-2"> 
+
           <div>
             <img class="full" src="https://flowbite.com/docs/images/blog/image-3.jpg" alt="">
         </div>
@@ -14,9 +15,11 @@
           {{ $job->employer->name}}
         </div>
 
-          <button class="mt-4 border hover:shadow text-black font-bold py-2 px-4 rounded">
+          <button class="mt-2 border hover:shadow font-bold py-2 px-4 rounded">
                <a href="/jobs" class="text-blue-700"> back to jobs </a>
           </button>
+
+          <x-button href="/jobs/{{ $job->id }}/edit">edit job</x-button> 
        
         </div>
     </div>
