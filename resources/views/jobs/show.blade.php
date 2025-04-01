@@ -5,7 +5,7 @@
         <div class="pt-2"> 
 
           <div>
-            <img class="full" src="https://flowbite.com/docs/images/blog/image-3.jpg" alt="">
+            {{-- <img class="full" src="https://flowbite.com/docs/images/blog/image-3.jpg" alt=""> --}}
         </div>
           <h1 class="text-2xl font-bold"> {{ $job['title'] }} </h1>
           <p class="mt-2 text-xl "> Pays {{ $job['salary'] }}$ per yr </p>

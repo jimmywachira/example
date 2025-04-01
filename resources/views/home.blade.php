@@ -27,8 +27,8 @@
                 <div class="flex-1  flex flex-col justify-between">
                     <header> 
                       <div class="space-x-2">
-                        <a class="py-2 px-4 border border-blue-500 rounded-full  font-bold text-xs" href="/products">shop</a>
-                        <a class="py-2 px-4 border border-blue-500 rounded-full  text-xs font-bold" href="/about">blog</a>
+                        <a class="py-2 px-4 border border-blue-500 rounded-full  font-bold text-xs" href="/jobs">jobs</a>
+                        <a class="py-2 px-4 border border-blue-500 rounded-full  text-xs font-bold" href="/about">about</a>
                       </div>
       
                       <div class="mt-4">

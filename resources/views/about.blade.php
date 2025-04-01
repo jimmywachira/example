@@ -1,8 +1,8 @@
 <x-layout>
   <x-slot:heading>about us</x-slot:heading>
 
-  <main class="container mx-auto p-2 m-2">
-    <section class="bg-white rounded-lg shadow-md ">
+  <main class="container-fluid mx-auto p-2 m-2">
+    <section class="bg-white rounded-lg shadow-md">
 
         <p class="text-black-700 leading-relaxed mb-4 p-2">
             RareFinds Marketplace, is a unique online platform born out of the frustration of searching endlessly for those elusive, discontinued, or highly specialized items. We understand the challenges faced by individuals, hobbyists, repair technicians, and businesses when trying to locate products no longer in production or parts that are incredibly hard to come by through traditional retail channels.
