@@ -13,7 +13,7 @@
             </div> --}}
             
             <div class="font-bold m-1 text-xl">{{ $job['title'] }}</div>
-            <div class="text-lg m-1">Pays {{ $job['salary'] }}$ per yr</div>
+            <div class="text-lg m-1">Pays {{ number_format($job['salary']) }} usd | yr </div>
             <div class="font-bold m-1 text-blue-500">{{ $job->employer->name }}</div>
           </a>
         @endforeach

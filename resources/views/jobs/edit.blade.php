@@ -1,10 +1,12 @@
 <x-layout>
     <x-slot:heading>edit job : {{ $job->title }}</x-slot:heading>
 
-    <form method="POST" action="/jobs/{{ $job->id }}" class="">
+    <div class="flex min-h-full flex-col justify-center px-3 py-6 lg:px-8 shadow rounded">
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form method="POST" action="/jobs/{{ $job->id }}" class="space-y-6">
       @csrf
       @method('patch') 
-        <div class="border items-center justify-between m-2 p-2">
+        <div class="">
             <div class="">
                 <label for="title" class="">
                     title
@@ -50,6 +52,7 @@
                   </div>
                 </div>
         </div>
+      </div>
       </form>
 
       <form method="POST" action="/jobs/{{ $job->id }}" class="hidden" id="delete-form">
@@ -59,4 +62,5 @@
             <button type="submit" class="text-red-500 font-bold">delete</button>
         </div>
       </form>
+    </div>
 </x-layout>    

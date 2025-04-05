@@ -19,7 +19,7 @@ use App\Http\Controllers\RegisteredUserController;
 # This is the default route for the application
 Route::view('/', 'home');
 
-Route::resource('jobs', JobController::class);
+Route::resource('jobs', JobController::class)->middleware('auth');
 
 #It returns the about view
 Route::view('/about', 'about')->name('about');
@@ -29,8 +29,11 @@ Route::get('/register', [RegisteredUserController::class, 'create']);
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 
+Route::post('/login', [SessionController::class, 'store']);
+
+Route::post('/logout', [SessionController::class, 'destroy']);
 
 // #index
 // Route::get('/jobs',[JobController::class, 'index']);

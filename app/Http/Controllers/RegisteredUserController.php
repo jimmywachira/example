@@ -13,22 +13,18 @@ class RegisteredUserController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
+        $attributes = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|confirmed',
         ]);
 
         // Create the user
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
+        $user = User::create($attributes);
 
         // Log the user in
         auth()->login($user);
 
-        return redirect('/')->with('success', 'Registration successful!');
+        return redirect('/jobs')->with('success', 'Registration successful!');
     }
 }
