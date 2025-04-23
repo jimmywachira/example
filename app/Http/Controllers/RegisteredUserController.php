@@ -11,12 +11,13 @@ class RegisteredUserController extends Controller
     {
         return view('auth.register');
     }
+    
     public function store(Request $request)
     {
         $attributes = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8|confirmed',
+            'password' => ['required', Password::min(8) ,'confirmed']
         ]);
 
         // Create the user

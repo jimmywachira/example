@@ -1,47 +1,68 @@
 <x-layout>
-    <x-slot:heading>log in</x-slot:heading>
+    <x-slot:heading>
+        Log In
+    </x-slot:heading>
 
-<div class="flex min-h-full flex-col justify-center px-3 py-6 lg:px-8 shadow rounded">
-  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <img class="mx-auto h-10 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=blue&shade=600" alt="Your Company">
-    <h2 class="mt-5 text-center text-2xl/9 font-bold tracking-tight text-black-900">log In </h2>
-  </div>
-
-  <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" action="/login" method="POST">
-      @csrf
-      <div>
-        <label class="block block font-bold text-black-900" for="email">Email address</label>
-        <div class="mt-2">
-          <input type="email" name="email" class="block w-full border rounded-md bg-white px-3 py-1.5 text-base text-black-900 placeholder:text-gray-400 sm" id="email" autocomplete="email"  :value="old('email')">
-          <x-form-error name="email">
-          </x-form-error>
+    {{-- Removed the outer div with flex/shadow/margin. Content now sits within layout's styled pane. --}}
+    {{-- Kept the max-width constraint for the form area --}}
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm"> 
+        
+        {{-- Logo and Sub-heading Section --}}
+        <div class="text-center"> {{-- Center align items in this block --}}
+            <img class="mx-auto h-10 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=blue&shade=600" alt="Your Company">
+            {{-- Styled sub-heading consistent with theme --}}
+            <h2 class="mt-6 text-2xl font-semibold leading-9 tracking-tight text-gray-800">
+                Sign in to your account
+            </h2>
         </div>
-      </div>
 
-      <div>
-        <div class="flex items-center justify-between">
-          <label class="block block font-bold text-black-900" for="password">Password</label>
-          {{-- <div class="text-sm">
-            <a href="#" class=" text-gray-600 hover:text-blue-500">Forgot password?</a>
-          </div> --}}
+        {{-- Form Section --}}
+        <div class="mt-8"> {{-- Increased top margin --}}
+            <form class="space-y-6" action="/login" method="POST">
+                @csrf
+
+                {{-- Email Field --}}
+                <x-form-field>
+                    <x-form-label for="email">Email</x-form-label> {{-- Capitalized --}}
+                    <div class="mt-1"> {{-- Consistent spacing --}}
+                        <x-form-input name="email" id="email" type="email" :value="old('email')" placeholder="your.email@example.com" required />
+                    </div>
+                    <x-form-error name="email" />
+                </x-form-field>
+
+                {{-- Password Field --}}
+                <x-form-field>
+                    <x-form-label for="password">Password</x-form-label> {{-- Capitalized --}}
+                    <div class="mt-1"> {{-- Consistent spacing --}}
+                        <x-form-input name="password" id="password" type="password" placeholder="Password" required />
+                    </div>
+                    <x-form-error name="password" />
+                </x-form-field>
+
+                {{-- Remember Me Checkbox --}}
+                <div class="flex items-center">
+                    <input 
+                        id="remember" 
+                        name="remember" 
+                        type="checkbox" 
+                        class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    >
+                    <label for="remember" class="ml-2 block text-sm text-gray-700">
+                        Remember me
+                    </label>
+                </div>
+
+                {{-- Buttons Row --}}
+                {{-- Consistent alignment and spacing with other forms --}}
+                <div class="mt-6 flex items-center justify-end gap-x-4">
+                    {{-- Styled Cancel Link --}}
+                    <a href="/" class="text-sm font-semibold leading-6 text-gray-700 hover:text-black">Cancel</a>
+                    
+                    {{-- Log In Button (Assuming x-form-button renders a primary blue button) --}}
+                    <x-form-button>Log In</x-form-button>
+                </div>
+            </form>
         </div>
-        <div class="mt-2">
-          <input class="block border w-full rounded-md bg-white px-3 py-1.5 text-base text-black-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-black-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-400 sm" type="password" name="password" id="password" autocomplete="current-password">
-          <x-form-error name="password">
-          </x-form-error>
-        </div>
-      </div>
-
-      <div>
-        <x-form-button>login</x-form-button>
-      </div>
-    </form>
-
-    <p class="mt-5 text-center text-black-500 font-semibold">
-      Not registered?
-      <a href="/register" class=" text-blue-600 hover:text-blue-500">register</a>
-    </p>
-  </div>
-</div>
-</x-layout>    
+    </div>
+    {{-- Removed the closing div for the outer container --}}
+</x-layout>

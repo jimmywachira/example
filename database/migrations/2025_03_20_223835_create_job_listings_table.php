@@ -13,13 +13,10 @@ use Illuminate\Database\Migrations\Migration;
     {
         Schema::create('job_listings', function (Blueprint $table) {
             $table->id();
-            #$table->unsignedBigInteger(Employer::class);
             $table->foreignIdFor(Employer::class);
             $table->string('title');
             $table->integer('salary');
             $table->timestamps();
-
-            #$table->foreign('employer_id')->references('id')->on('employers');
         });
     }
 

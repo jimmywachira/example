@@ -15,32 +15,31 @@ class SessionController extends Controller
 
     public function store(Request $request)
     {
-        #dd(request()->all());
-
         #validate
         $attributes = request()->validate([
-            'email' => 'required|email',
+            'email' => 'required | email',
             'password' => 'required',
         ]);
         
         #attempt to login the user
         if(!Auth::attempt($attributes)){
             throw ValidationException::withMessages([
-                'email' => 'sorry, the provided credentials do not match ',
+                'email' => 'the provided credentials do not match'
             ]);
         }
-        #assigmnt ; reset passwrd? rate limiting?
 
-        #regenerate the session token avoid sess hijacking/fixation
+        #assigmnt; reset passwrd? rate limiting?
+
+        #regenerate the session token avoid session hijacking/fixation
         $request->session()->regenerate();
 
         #redirect to the intended page 
-        return redirect()->intended('/jobs')->with('success', 'Login successful!');
+        return redirect('/jobs')->with('success', 'Login successful!');
 
         
         // $credentials = $request->only('email', 'password');
 
-        // if (auth()->attempt($credentials)) {
+        // if (auth()->attempt($credentials),request()->filled('remember')) {
         //     return redirect('/')->with('success', 'Login successful!');
         // }
 

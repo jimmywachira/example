@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Mail\JobPosted;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,14 @@ use App\Http\Controllers\RegisteredUserController;
 |
 */
 
+// Route::get('test', function(){
+//     \Illuminate\Support\Facades\Mail::to('jwachira40@gmail.com')->send(new JobPosted());
+//     return 'Done!';
+//     // return new JobPosted();
+// });
+
 # This is the default route for the application
 Route::view('/', 'home');
-
-Route::resource('jobs', JobController::class)->middleware('auth');
 
 #It returns the about view
 Route::view('/about', 'about')->name('about');
@@ -35,23 +40,30 @@ Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy']);
 
-// #index
-// Route::get('/jobs',[JobController::class, 'index']);
+#index
+Route::get('/jobs',[JobController::class, 'index'])->name('jobs.index');
 
-// #create
-// Route::get('/jobs/create', [JobController::class, 'create']);
+#create
+Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create')->middleware('auth');
 
-// #show
-// Route::get('/jobs/{job}', [JobController::class, 'show']);
+#show
+Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
 
-// #store
-// Route::post('/jobs', [JobController::class, 'store']);
+#store
+Route::post('/jobs', [JobController::class, 'store'])
+->middleware(['auth']);
 
-// #edit
-// Route::get('/jobs/{job}/edit', [JobController::class, 'edit']);
+#edit
+Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
+->middleware('auth')
+->can('edit','job')->name('jobs.edit');
 
-// #update 
-// Route::patch('/jobs/{job}', [JobController::class, 'update']);
+#update 
+Route::patch('/jobs/{job}', [JobController::class, 'update'])->name('jobs.update');    
 
-// #destroy 
-// Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
+#destroy 
+Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('jobs.destroy');
+
+// Route::resource('jobs', JobController::class)->only(['index','show']);
+
+// Route::resource('jobs', JobController::class)->except(['index','show'])->middleware('auth');
