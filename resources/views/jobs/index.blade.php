@@ -3,7 +3,7 @@
     {{-- Use a more descriptive heading --}}
     <x-slot:heading>Find Your Next Opportunity!</x-slot:heading> 
 
-    <div class="flex justify-end mb-4 ml-auto"> 
+    <div class="flex justify-end mb-4 ml-auto text-xl font-semibold"> 
             {{-- 
               MODIFIED Button Usage:
               - Added specific classes for size, shadow, and transition.
@@ -12,7 +12,7 @@
             --}}
             <x-button 
                 href="/jobs/create" 
-                class="inline-flex items-center gap-x-1.5 px-4 py-2 shadow-md hover:bg-blue-500 transition duration-150" 
+                class="inline-flex items-center gap-x-1.5 px-4 py-2 shadow-md hover:bg-blue-500" 
                 {{-- Added inline-flex, gap, padding, shadow, hover --}}
             >
                 {{-- Heroicon: plus-circle (solid, 20x20) --}}

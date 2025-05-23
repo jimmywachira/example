@@ -27,7 +27,7 @@
 
     {{-- What We Do / How It Works --}}
     <div class="mb-16 text-left"> {{-- Left-align for easier reading of longer text --}}
-        <h3 class="text-2xl font-semibold leading-7 text-blue-700 mb-4">Bridging the Gap Between Talent and Opportunity</h3>
+        <h3 class="text-2xl font-semibold text-center leading-7 text-blue-700 mb-4">Bridging the Gap Between Talent and Opportunity</h3>
         <p class="text-base leading-7 text-black mb-4">
             Traditional job boards can be cluttered and impersonal. We strive to provide a more focused and effective experience by offering:
         </p>
@@ -53,10 +53,10 @@
         <div class="mt-10">
           {{-- Using flex for centering and spacing --}}
           <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-base font-semibold leading-7 text-blue-600">
-            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Open roles <span aria-hidden="true">&rarr;</span></a>
-            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Internship program <span aria-hidden="true">&rarr;</span></a>
-            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Our values <span aria-hidden="true">&rarr;</span></a>
-            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Open roles </a>
+            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Internship program </a>
+            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Our values </a>
+            <a href="#" class="hover:text-blue-800 transition duration-150 ease-in-out">Meet our leadership </a>
           </div>
         </div>
     </div>

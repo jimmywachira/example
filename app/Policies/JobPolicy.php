@@ -10,7 +10,7 @@ class JobPolicy
 {
 
     public function edit(User $user, Job $job){
-        return $job->employer->user->is($user);
+        return $job->employer->user->is($user) ? Response::allow(): Response::deny('This action is unauthorized');
     }
 
 

@@ -8,12 +8,12 @@
   
         {{-- Section 1: Visual Header with Logo and Job Info --}}
         {{-- Provides context about the job being edited --}}
-        <section class="flex items-center gap-x-4 pb-6 border-b border-gray-200">
+        <section class="flex items-center gap-x-4 shadow p-4">
             {{-- Employer Logo/Avatar --}}
             <div class="shrink-0">
                 <img src="{{ $job->employer->logo ? asset('storage/' . $job->employer->logo) : 'https://ui-avatars.com/api/?name=' . urlencode($job->employer->name) . '&background=random&color=fff&size=128' }}" 
                      alt="{{ $job->employer->name }} Logo" 
-                     class="size-16 rounded-full object-cover border border-gray-300 shadow-md"> {{-- Changed rounded-xl to rounded-full --}}
+                     class="size-16 rounded-full object-cover shadow-md"> {{-- Changed rounded-xl to rounded-full --}}
             </div>
   
             {{-- Job Title and Employer Name --}}
@@ -46,7 +46,7 @@
                             type="text" 
                             name="title" 
                             id="title" 
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm py-2 px-3 placeholder:text-gray-400" 
+                            class="block w-full rounded-md shadow-sm focus:ring-blue-500 sm:text-sm py-2 px-3 placeholder:text-gray-400" 
                             placeholder="e.g., Senior Laravel Developer" 
                             required
                             value="{{ old('title', $job->title) }}"> {{-- Use old() for sticky form --}}
@@ -69,7 +69,7 @@
                             type="text" 
                             name="salary" 
                             id="salary" 
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm py-2 px-3 placeholder:text-gray-400" 
+                            class="block w-full rounded-md shadow-sm focus:ring-blue-500 sm:text-sm py-2 px-3 placeholder:text-gray-400" 
                             placeholder="e.g., 90000" 
                             required 
                             value="{{ old('salary', $job->salary) }}"> {{-- Use old() for sticky form --}}
@@ -90,7 +90,7 @@
                             name="description" 
                             id="description" 
                             rows="6" {{-- Adjusted rows back slightly for single paragraph --}}
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm py-2 px-3 placeholder:text-gray-400" 
+                            class="block w-full rounded-md  shadow-sm focus:ring-blue-500 sm:text-sm py-2 px-3 placeholder:text-gray-400" 
                             placeholder="Describe the role, responsibilities, and requirements..."
                             required>{{-- Use old() helper with existing description or new single-paragraph dummy text --}}
 {{ old('description', $job->description ?? "Join our forward-thinking company! We're looking for a motivated and skilled individual to contribute to exciting projects, collaborate with a talented team, and drive innovation in our industry. Ideal candidates possess strong problem-solving abilities, excellent communication skills, thrive in a fast-paced environment, and are eager to make a significant impact. If you're ready for a challenging and rewarding opportunity where you can grow your career, we encourage you to apply today!") }}</textarea>
@@ -102,7 +102,7 @@
   
   
                 {{-- Buttons Row --}}
-                <div class="mt-8 flex items-center justify-between gap-x-6 border-t border-gray-200 pt-6">
+                <div class="mt-8 flex items-center justify-between gap-x-6 pt-6">
                     {{-- Delete Button (triggers hidden form) --}}
                     <div>
                         <button 

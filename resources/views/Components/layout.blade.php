@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Learn | {{ $title ?? 'laravel' }}</title> {{-- Added dynamic title possibility --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js']) {{-- Using Vite for CSS and JS --}}
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
     {{-- Add custom styles if needed for text-shadow or complex effects --}}
     <style>
         /* Example: Subtle text shadow for potentially better readability on gradient */
@@ -22,8 +23,10 @@
   - Removed the percentage stops for a smooth transition.
 --}}
 <body 
-    class="h-full antialiased font-semibold bg-[linear-gradient(to_bottom_right,theme(colors.blue.800),theme(colors.white))]" 
-    style="font-family:Ubuntu"
+    class="h-full text-lg antialiased font-semibold bg-[linear-gradient(to_bottom_right,theme(colors.blue.800),theme(colors.white))]" 
+    style="font-family:Delius;" {{-- Added fallback for older browsers --}}
+    {{-- Added a subtle text shadow for better readability on the gradient --}}
+    {{-- class="text-shadow" --}} {{-- Uncomment if using text-shadow class --}}
 >
 
 {{-- The min-h-full div ensures content can push down if needed --}}
@@ -143,7 +146,7 @@
 {{-- ... head ... --}}
 <body 
     class="h-full antialiased font-semibold bg-[linear-gradient(to_bottom_right,theme(colors.blue.800),theme(colors.white))]" 
-    style="font-family:Ubuntu"
+    style="font-family:Delius"
 >
 <div class="min-h-full flex flex-col"> 
     

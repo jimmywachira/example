@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Models\Job;
+use App\Jobs\TranslateJob;
 use App\Mail\JobPosted;
 
 /*
@@ -16,6 +18,16 @@ use App\Mail\JobPosted;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('test', function(){
+    // dispatch(function(){
+    //     logger('hello from the queue');
+    // });
+    $job = Job::first();
+    TranslateJob::dispatch($job);
+
+    return 'Done';
+});
 
 // Route::get('test', function(){
 //     \Illuminate\Support\Facades\Mail::to('jwachira40@gmail.com')->send(new JobPosted());
@@ -36,7 +48,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 
-Route::post('/login', [SessionController::class, 'store']);
+Route::post('/login', [SessionController::class, 'store'])->middleware('throttle:login,5,1');
 
 Route::post('/logout', [SessionController::class, 'destroy']);
 

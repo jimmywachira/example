@@ -4,11 +4,12 @@
     <x-slot:heading>Job Details</x-slot:heading>
   
     {{-- Main content container --}}
-    <div class="space-y-8"> 
+    <div class="space-y-8">
+        {{-- Job Details Header --}}
   
         {{-- Section 1: Header with Logo, Title, Employer, and Key Info --}}
         {{-- Re-introduced flex layout and the logo --}}
-        <section class="flex flex-col sm:flex-row items-start gap-6 pb-6 border-b border-gray-200">
+        <section class="flex flex-col sm:flex-row items-start gap-6 pb-3 ">
             {{-- Employer Logo/Avatar --}}
             <div class="shrink-0">
                 <img src="{{ $job->employer->logo ? asset('storage/' . $job->employer->logo) : 'https://ui-avatars.com/api/?name=' . urlencode($job->employer->name) . '&background=random&color=fff&size=128' }}" 
